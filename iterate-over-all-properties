@@ -1,0 +1,26 @@
+`own` props are defined directly on the object instance itself, while `prototype` props are defined on in the prototype method.
+
+In this problem, add beagles ownProps as well as the prototype propertes to the array prototypeProps:
+
+
+
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+
+let beagle = new Dog("Snoopy");
+
+let ownProps = [];
+let prototypeProps = [];
+
+// Only change code below this line
+
+for (let property in beagle) {
+  if(beagle.hasOwnProperty(property)) {
+    ownProps.push(property);
+  } else {
+    prototypeProps.push(property);
+  }
+}
